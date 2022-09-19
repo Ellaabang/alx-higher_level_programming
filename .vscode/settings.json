@@ -1,0 +1,10 @@
+{
+    
+    "python.pythonPath":  "env/bin/python",
+    "python.linting.pep8enabled":  true,
+    "python.linting.pycodestyleEnabled":  true,
+    "python.linting.enabled":  true,
+    "python.autoComplete.extraPaths":  [
+    
+    ]
+}
