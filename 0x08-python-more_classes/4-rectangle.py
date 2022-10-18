@@ -4,12 +4,8 @@
 
 class Rectangle:
     """Defines a rectangle"""
-    number_of_instances = 0
-    print_symbol = "#"
-
     def __init__(self, width=0, height=0):
         """init"""
-        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -51,17 +47,6 @@ class Rectangle:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """Return the rectangle with greater area"""
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return (rect_1)
-        return (rect_2)
-
     def __str__(self) -> str:
         """Return the printable representation of the Rectangle.
         """
@@ -70,7 +55,7 @@ class Rectangle:
 
         rect = []
         for x in range(self.__height):
-            [rect.append(str(self.print_symbol)) for y in range(self.__width)]
+            [rect.append('#') for y in range(self.__width)]
             if x != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
@@ -81,7 +66,3 @@ class Rectangle:
         rectangle += ", " + str(self.__height) + ")"
         return rectangle
 
-    def __del__(self):
-        """print message for deletion"""
-        type(self).number_of_instances -= 1
-        print("Bye rectangle...")
